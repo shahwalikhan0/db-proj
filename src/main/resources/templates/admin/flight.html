@@ -1,0 +1,34 @@
+<div id="flight-actions">
+  <form class="password-update-form" action="/admin/flight/add" method="post">
+    <h3>Add a Flight</h3>
+    <label class="">Flight Departure Date:</label>
+    <input type="date" name="departureTime" placeholder="Departure Date" required>
+    <label class="">Flight Arrival Date:</label>
+    <input type="date" name="arrivalTime" placeholder="Arrival Date" required><br>
+    <label class="">Departure Airport:</label>
+    <input type="text" name="departureAirport" placeholder="Departure Airport" required>
+    <label class="">Destination Airport:</label>
+    <input type="text" name="destinationAirport" placeholder="Destination Airport" required><br>
+    <label class="">Total Seats:</label>
+    <input type="number" name="totalSeats" placeholder="Total Seats" min="1" required>
+    <label class="">Price:</label>
+    <input type="number" name="price" placeholder="Per Seat Price" min="1" required>
+    <button type="submit" class="btn btn-success">Add Flight</button>
+  </form>
+  <form class="password-update-form" action="/admin/flight/update" method="post">
+    <h3>Update a Flight</h3>
+    <label class="">Flight id:</label>
+    <input type="number" name="id" placeholder="Flight ID" required>
+    <label class="">Flight Departure Date:</label>
+    <input type="date" name="departureTime" placeholder="Updated Departure Date" required><br>
+    <label class="">Flight Arrival Date:</label>
+    <input type="date" name="arrivalTime" placeholder="Updated Arrival Date" required>
+    <button type="submit" class="btn btn-primary">Update Flight</button>
+  </form>
+  <form class="password-update-form" action="/admin/flight/remove" method="post">
+    <h3>Remove a Flight</h3>
+    <label class="">Flight id:</label>
+    <input type="number" name="id" placeholder="Flight ID" required>
+    <button type="submit" class="btn btn-danger">Remove</button>
+  </form>
+</div>

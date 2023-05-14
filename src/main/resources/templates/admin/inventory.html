@@ -1,0 +1,24 @@
+<div id="inventory-actions">
+    <form class="password-update-form" action="/admin/inventory/add" method="post">
+        <h3>Add an Item</h3>
+        <label class="">Item Name:</label>
+        <input type="text" name="name" placeholder="Item Name" required>
+        <label class="">Item Quantity:</label>
+        <input type="number" min="1" name="quantity" placeholder="Item Quantity" required>
+        <button type="submit" class="btn btn-success">Add</button>
+    </form>
+    <form class="password-update-form" action="/admin/inventory/update" method="post">
+        <h3>Update an Item</h3>
+        <label class="">Item Name:</label>
+        <input type="text" name="name" placeholder="Item Name" required>
+        <label class="">Item Quantity:</label>
+        <input type="number" min="1" name="quantity" placeholder="Update Quantity" required>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    <form class="password-update-form" action="/admin/inventory/remove" method="post">
+        <h3>Remove an Item</h3>
+        <label class="">Item Name:</label>
+        <input type="text" name="name" placeholder="Item Name" required>
+        <button type="submit" class="btn btn-danger">Remove</button>
+    </form>
+</div>

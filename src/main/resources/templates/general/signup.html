@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" th:href="@{/images/logo.png}">
+    <title>AirTrack</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/login.css}">
+</head>
+<body>
+<nav th:replace="~{general/navbar :: nav}"></nav>
+<main>
+    <div class="form-box signup">
+        <h6 class="errorMessage alert" th:text="${errorMessage}" style="text-align: center; color: red"></h6>
+        <h6 class="successMessage alert" th:text="${successMessage}" style="text-align: center; color: green"></h6>
+        <div class="button-box">
+            <h4>Create New Account</h4>
+        </div>
+        <form class="input-grp" action="/general/signup" method="post">
+            <input type="text" class="input-field" placeholder="Enter username" name="username" required />
+            <input type="text" class="input-field" placeholder="Enter your full name" name="fullName" required />
+            <input type="text" class="input-field" placeholder="Enter 10 digit account number" name="passportNumber" required />
+            <input type="password" class="input-field" placeholder="Enter Password" name="password" required />
+            <input type="password" class="input-field" placeholder="Re-enter Password" name="confirmPassword" required />
+            <button type="submit" class="submit-btn">Sign Up</button>
+            <p style="font-size: 13px">*Your account number is same as passport number</p>
+        </form>
+    </div>
+</main>
+<footer th:replace="~{general/footer :: footer}"></footer>
+</body>
+<script>
+    setTimeout(() => {
+        document.getElementsByClassName("alert")[0].style.display = "none";
+    }, 3000);
+</script>
+</html>

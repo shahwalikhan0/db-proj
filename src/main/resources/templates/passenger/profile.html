@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" th:href="@{/images/logo.png}">
+  <title>AirTrack</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles/index.css}">
+  <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+  <script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+<nav th:replace="~{passenger/navbar :: nav}"></nav>
+<main>
+  <div th:if="${message}">
+    <p class="alert alert-info" style="text-align: center" th:text="${message}"></p>
+  </div>
+  <div class="profile-container">
+    <h1>User Profile</h1>
+    <div class="profile">
+      <label>User Id:</label>
+      <span th:text="${user.id}"></span>
+    </div>
+    <div class="profile">
+      <label>Username:</label>
+      <span th:text="${user.username}"></span>
+    </div>
+    <div class="profile">
+      <label>Passport Number:</label>
+      <span th:text="${passportNumber}"></span>
+    </div>
+    <div class="profile">
+      <label>Account Balance:</label>
+      <span th:text="${'$'+balance}"></span>
+    </div>
+    <p style="font-size: 13px">*Your account number is same as passport number</p>
+    <button onclick="showUpdateForm(event)" class='btn btn-primary'>Update Profile</button>
+    <button onclick="showUpdatePassword(event)" class='btn btn-success'>Update Password</button>
+    <form id="update-form" class="profile-update-form" action="/passenger/updateProfile" method="post">
+      <label>Username:</label>
+      <input type="text" id="username" name="username" placeholder="Change username..."/>
+      <button type="submit">Save Change</button>
+      <button type="button" onclick="hideUpdateForm(event)">Cancel</button>
+    </form>
+
+    <form id="update-password" class="profile-update-form password-update-form" action="/passenger/updatePassword" method="post">
+      <label>Old Password:</label>
+      <input type="password" id="old-password" name="oldPassword" placeholder="Enter old password..."/>
+      <label>New Password:</label>
+      <input type="password" id="new-password" name="newPassword" placeholder="Enter new password..."/>
+      <label>Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirmNewPassword" placeholder="Confirm new password..."/>
+      <button type="submit">Update Password</button>
+      <button type="button" onclick="hideUpdatePassword(event)">Cancel</button>
+    </form>
+  </div>
+</main>
+<footer th:replace="~{general/footer :: footer}"></footer>
+</body>
+<script>
+
+  const showUpdateForm = (event) => {
+    hideUpdatePassword(event);
+    event.preventDefault();
+    document.getElementById("update-form").style.display = "flex";
+  }
+  const hideUpdateForm = (event) => {
+    event.preventDefault();
+    document.getElementById("update-form").style.display = "none";
+  }
+  const showUpdatePassword = (event) => {
+    hideUpdateForm(event);
+    event.preventDefault();
+    document.getElementById("update-password").style.display = "flex";
+  }
+  const hideUpdatePassword = (event) => {
+    event.preventDefault();
+    document.getElementById("update-password").style.display = "none";
+  }
+
+  setTimeout(() => {
+    document.getElementsByClassName("alert")[0].style.display = "none";
+  }, 3000);
+</script>
+</html>

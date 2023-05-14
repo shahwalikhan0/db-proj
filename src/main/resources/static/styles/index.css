@@ -1,0 +1,346 @@
+*, *::before, *::after {
+    margin:0;
+    padding:0;
+    font-family: 'Playfair Display', serif;
+}
+main{
+    min-height: 85vh;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-position:center;
+    background-size:cover;
+    position:relative;
+}
+.navbar-brand-logo{
+    width: 100px;
+    height: 70px;
+    margin-top: -10px;
+}
+nav{
+    display:flex;
+    padding: 1% 2% 0 2%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+nav h1{
+    color: black;
+    font-size: 30px;
+    padding-left: 3%;
+}
+nav img{
+    width: 100px;
+    height: 50px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links p{
+    color: white;
+    font-size: 17px;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+.nav-links ul li ::after{
+    content: '';
+    width:0%;
+    height:2px;
+    background: #5BD4B2;
+    display:block;
+    margin:auto;
+    transition: 1s;
+}
+.nav-links ul li :hover::after{
+    width: 100%;
+}
+.text-box{
+    width: 90%;
+    color:#fff;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 50px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size:20px;
+    color:black;
+}
+.button
+{
+    display: inline-block;
+    text-decoration: none;
+    color:#fff;
+    border:1px solid #fff;
+    border-radius: 10px;
+    padding:12px 34px;
+    font-size: 17px;
+    background: transparent;
+    position: relative;
+    cursor:pointer;
+}
+.button:hover{
+    border:1px solid #000000;
+    color:black;
+    background: #5BD4B2;
+    transition: 1s;
+}
+.service{
+    width: 80%;
+    margin:auto;
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 30px;
+    font-weight: 600;
+}
+p{
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.col1{
+    flex-basis: 31%;
+    background: #C2FFEE;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding:20px 12px;
+    box-sizing: border-box;
+    transition: 1s;
+}
+.h3{
+    text-align: center;
+    font-weight:600;
+    margin:10px 0;
+}
+.col1:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+.button1{
+    display: inline-block;
+    text-decoration: none;
+    color:#000000;
+    border:1px solid #000000;
+    border-radius: 10px;
+    padding:12px 34px;
+    font-size: 17px;
+    background:#FF8787;
+    position: relative;
+    cursor:pointer;
+}
+.button1:hover{
+    border:1px solid #000000;
+    background: #FF0000;
+    color: black;
+    transition: 1s;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+footer{
+    background-color: #f9f9f9;
+    margin-bottom: -15px;
+    text-align: center;
+}
+.flight-container-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.flight-container-header button{
+    margin-left: auto;
+    margin-right: 10px;
+}
+.flight-main{
+    padding: 2%;
+}
+
+.flight-search-input{
+    width: 30vw;
+    margin-left: 44vw;
+}
+
+.flight-container-header h1 {
+    margin-right: 10px;
+}
+
+.flight-main table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.flight-main th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.flight-main th {
+    background-color: #f2f2f2;
+}
+
+.flight-main .center {
+    text-align: center;
+}
+
+.flight-main .button {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.flight-main .button:hover {
+    background-color: #3e8e41;
+}
+
+.flight-main .button:disabled {
+    background-color: #cccccc;
+    cursor: default;
+}
+
+.profile-container {
+    margin-top: 10vh !important;
+    margin-bottom: 10vh !important;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+.profile-container button {
+    margin-right: 10px;
+}
+
+h1 {
+    margin-top: 0;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile label {
+    font-weight: bold;
+    margin-right: 10px;
+    flex-basis: 150px;
+}
+
+.profile span {
+    font-size: 18px;
+}
+
+.profile button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profile button:hover {
+    background-color: #3e8e41;
+}
+
+.profile-update-form, #filter-form{
+    display: none;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.profile-update-form label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.profile-update-form input[type=text] {
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.password-update-form input {
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.edit-profile {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+}
+.profile-update-form button[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profile-update-form button[type=submit]:hover {
+    background-color: #3e8e41;
+}
+
+.profile-update-form button[type=button] {
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profile-update-form button[type=button]:hover {
+    background-color: #bbb;
+}
+

@@ -1,0 +1,24 @@
+<div id="discount-actions">
+  <form class="password-update-form" action="/admin/discount/add" method="post">
+    <h3>Add a discount</h3>
+    <label class="">Discount Code:</label>
+    <input type="text" name="discountCode" placeholder="Discount Code" required>
+    <label class="">Discount Percentage:</label>
+    <input type="number" min="1" name="discountPercent" placeholder="Discount Percentage" required>
+    <button type="submit" class="btn btn-success">Add</button>
+  </form>
+  <form class="password-update-form" action="/admin/discount/update" method="post">
+    <h3>Update a discount</h3>
+    <label class="">Discount Code:</label>
+    <input type="text" name="discountCode" placeholder="Discount Code" required>
+    <label class="">Discount Percentage:</label>
+    <input type="number" min="1" name="discountPercent" placeholder="Updated Percentage" required>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+  <form class="password-update-form" action="/admin/discount/remove" method="post">
+    <h3>Remove a discount</h3>
+    <label class="">Discount Code:</label>
+    <input type="text" name="discountCode" placeholder="Discount Code" required>
+    <button type="submit" class="btn btn-danger">Remove</button>
+  </form>
+</div>

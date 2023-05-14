@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" th:href="@{/images/logo.png}">
+    <title>AirTrack</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/login.css}">
+</head>
+<body>
+    <nav th:replace="~{general/navbar :: nav}"></nav>
+    <main>
+      <div class="form-box">
+          <h6 class="errorMessage" th:text="${errorMessage}" style="text-align: center; color: red"></h6>
+        <div class="button-box">
+          <h4>Welcome Back</h4>
+        </div>
+        <form class="input-grp" action="/" method="post">
+            <h3 style="text-align: center">Login as:</h3>
+            <select class="login-nav" name="userType">
+                <option value="PASSENGER">Passenger</option>
+                <option value="ADMIN">Admin</option>
+            </select>
+          <input type="text" class="input-field" placeholder="User name" name="username" required/>
+          <input type="password" class="input-field" placeholder="Enter Password" name="password" required/>
+          <button type="submit" class="submit-btn">Log In</button>
+        </form>
+      </div>
+    </main>
+    <footer th:replace="~{general/footer :: footer}"></footer>
+</body>
+</html>
+<script>
+    setTimeout(function() {
+        document.getElementsByClassName('errorMessage')[0].innerHTML = '';
+    }, 3000);
+</script>

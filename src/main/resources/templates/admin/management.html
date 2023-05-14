@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" th:href="@{/images/logo.png}">
+  <title>AirTrack</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles/index.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles/login.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles/admin.css}">
+  <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+  <script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js}"></script>
+
+</head>
+<body>
+<nav th:replace="~{admin/navbar :: nav}"></nav>
+<main class='flight-main admin-main'>
+  <div th:if="${message}">
+    <p class="alert alert-info" style="text-align: center" th:text="${message}"></p>
+  </div>
+  <section class='service'>
+    <h3>Admin Management</h3>
+    <div class='row'>
+      <h3>Actions:</h3>
+      <table>
+        <thead>
+        <tr>
+          <th>Item Type</th>
+          <th class='center'>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Passenger</td>
+          <td class='center'>
+            <button type="button" class="btn btn-success" onclick="showPassengerActions(event)">Show Actions</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Flight</td>
+          <td class='center'>
+            <button type="button" class="btn btn-success" onclick="showFlightActions(event)">Show Actions</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Inventory</td>
+          <td class='center'>
+            <button type="button" class="btn btn-success" onclick="showInventoryActions(event)">Show Actions</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Discount</td>
+          <td class='center'>
+            <button type="button" class="btn btn-success" onclick="showDiscountActions(event)">
+              Show Actions
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>Revenue</td>
+          <td class='center'>
+            <button type="button" class="btn btn-success" onclick="showRevenueActions(event)">
+              Show Actions
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section class="add-data-section container-fluid mt-5" style="margin-left: 40%; transform: translate(-25%); width: 65%;">
+    <div th:replace="~{admin/discount :: div}"></div>
+    <div th:replace="~{admin/inventory :: div}"></div>
+    <div th:replace="~{admin/flight :: div}"></div>
+    <div th:replace="~{admin/passenger :: div}"></div>
+    <div th:replace="~{admin/revenue :: div}"></div>
+  </section>
+</main>
+<footer th:replace="~{general/footer :: footer}"></footer>
+</body>
+<script>
+  const showDiscountActions = (event) => {
+    event.preventDefault();
+    document.getElementById('discount-actions').style.display = 'block';
+    hideInventoryActions(event);
+    hideFlightActions(event);
+    hidePassengerActions(event);
+    hideRevenueActions(event);
+  }
+  const showPassengerActions = (event) => {
+    event.preventDefault();
+    document.getElementById('passenger-actions').style.display = 'block';
+    hideInventoryActions(event);
+    hideFlightActions(event);
+    hideDiscountActions(event);
+    hideRevenueActions(event);
+  }
+  const showInventoryActions = (event) => {
+    event.preventDefault();
+    document.getElementById('inventory-actions').style.display = 'block';
+    hideDiscountActions(event);
+    hideFlightActions(event);
+    hidePassengerActions(event);
+    hideRevenueActions(event);
+  }
+  const showFlightActions = (event) => {
+    event.preventDefault();
+    document.getElementById('flight-actions').style.display = 'block';
+    hideDiscountActions(event);
+    hideInventoryActions(event);
+    hidePassengerActions(event);
+    hideRevenueActions(event);
+  }
+  const showRevenueActions = (event) => {
+      event.preventDefault();
+      document.getElementById('revenue-actions').style.display = 'block';
+      hideDiscountActions(event);
+      hideInventoryActions(event);
+      hidePassengerActions(event);
+      hideFlightActions(event);
+  }
+  const hideInventoryActions = (event) => {
+    event.preventDefault();
+    document.getElementById('inventory-actions').style.display = 'none';
+  }
+  const hideDiscountActions = (event) => {
+    event.preventDefault();
+    document.getElementById('discount-actions').style.display = 'none';
+  }
+  const hideFlightActions = (event) => {
+    event.preventDefault();
+    document.getElementById('flight-actions').style.display = 'none';
+  }
+  const hidePassengerActions = (event) => {
+    event.preventDefault();
+    document.getElementById('passenger-actions').style.display = 'none';
+  }
+  const hideRevenueActions = (event) => {
+    event.preventDefault();
+    document.getElementById('revenue-actions').style.display = 'none';
+  }
+
+  setTimeout(() => {
+    document.querySelector('.alert-info').style.display = 'none';
+  }, 3000);
+</script>
+</html>

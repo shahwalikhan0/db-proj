@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" th:href="@{/images/logo.png}">
+  <title>AirTrack</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles/index.css}">
+</head>
+<body>
+<nav th:replace="~{passenger/navbar :: nav}"></nav>
+<main>
+  <div class="button-box">
+    <h4 style="text-align: center;">Contact Us</h4>
+  </div>
+  <i class="fa fa-home"></i>
+  <p style="text-align: center;">We are fully committed towards our loyal customers and are glad to look into your positive feedback or upsets </p>
+  <section style="margin-left: 50px;">
+  <div class="row">
+    <div class="contact-col">
+      <div>
+        <i class="fa fa-home"></i>
+        <strong>
+          <h2><b>Head Quarter:</b></h2>
+          <h5>Lahore,Punjab,PK</h5>
+          <h5>+92 0332-4432683</h5>
+        </strong>
+      </div>
+      <div>
+        <i class="fa fa-home"></i>
+        <strong>
+          <h2><b>Reach us through email</b></h2>
+          <h5>tassadaqq.abid@airtrack.com</h5>
+          <h5>shah.wali@airtrack.com</h5>
+        </strong>
+      </div>
+      <p>24/7 Service available</p>
+    </div>
+  </div>
+
+  </section>
+</main>
+<footer th:replace="~{general/footer :: footer}"></footer>
+</body>
+</html>

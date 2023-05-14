@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" th:href="@{/images/logo.png}">
+  <title>AirTrack</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles/index.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles/login.css}">
+</head>
+<body>
+  <nav th:replace="~{passenger/navbar :: nav}"></nav>
+  <main>
+    <section class="service">
+      <h1>Hop On Now</h1>
+      <p>We warmly welcome you on board . Lets begin our journey to greatness</p>
+      <div class="row">
+        <div class="col1">
+          <h3>Membership</h3>
+          <p>If you travel frequently we would highly prefer you to have a membership of our company.</p>
+          <p th:if="${isPrimeMember}">You are already a member</p>
+          <a th:if="${!isPrimeMember}" class="button1" onclick="handlePrimeRequest()">Apply</a>
+        </div>
+        <div class="col1">
+          <h3>Booking</h3>
+          <p>Book yourself a trip to your favorite destination at affordable prices and discounts.</p>
+          <a class="button1" href="/passenger/booking">Show Booking</a>
+        </div>
+        <div class="col1">
+          <h3>Flights</h3>
+          <p>Check out flights of your favourite destinations</p>
+          <a class="button1" href="/passenger/flight">View Flights</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer th:replace="~{general/footer :: footer}"></footer>
+</body>
+</html>

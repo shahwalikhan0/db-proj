@@ -1,0 +1,55 @@
+.form-box{
+    margin-top: 10vh;
+    width: 380px;
+    height: 60vh;
+    position: relative;
+    margin-left:50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    background: white;
+    padding: 5px;
+}
+.button-box{
+    text-align: center;
+    width:220px;
+    margin:35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px aquamarine;
+    border-radius: 30px;
+}
+.input-grp{
+    top: 100px;
+    position: absolute;
+    width:280px;
+    transition: 1s;
+    left: 50px;
+}
+.input-field{
+    width:100%;
+    padding:10px 0;
+    margin:5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline:none;
+    background: transparent;
+}
+.submit-btn{
+    width: 85%;
+    padding:10px 30px;
+    cursor:pointer;
+    display:block;
+    margin:auto;
+    background:linear-gradient(to right,cyan,darkcyan);
+    border:0;
+    outline:none;
+    border-radius:30px;
+    margin-top: 20px;
+}
+.login-nav{
+    width: 100%;
+    border: 1px solid gainsboro;
+    padding: 5px;
+    border-radius: 6px;
+}
