@@ -54,6 +54,7 @@ public class FlightController {
     @PostMapping("/passenger/flight/book")
     public  String bookFlight(@RequestParam("id") int id,
                               @RequestParam("seats") int seats,
+                              @RequestParam("discount") String discount,
                               HttpSession session, Model model) {
         Passenger user = (Passenger) session.getAttribute("user");
         String sql = "SELECT balance FROM userAccount WHERE id = ?";
@@ -67,7 +68,17 @@ public class FlightController {
             session.setAttribute("message", "Not enough seats available");
             return "redirect:/passenger/flight";
         }
-        BigDecimal totalCost = BigDecimal.valueOf(price * seats);
+        sql = "SELECT * FROM discount WHERE code = ?";
+        rows = jdbcTemplate.queryForList(sql, discount);
+        if(rows.size() == 0) {
+            session.setAttribute("message", "Invalid discount code");
+            return "redirect:/passenger/flight";
+        }
+        int discountPercentage = (int) rows.get(0).get("discountPercent");
+
+        price = price - (price * discountPercentage / 100);
+        BigDecimal totalCost = new BigDecimal(price * seats);
+
         if (balance.compareTo(totalCost) < 0) {
             session.setAttribute("message", "Not enough balance");
             return "redirect:/passenger/flight";
@@ -159,6 +170,11 @@ public class FlightController {
                             @RequestParam("totalSeats") int totalSeats,
                             @RequestParam("price") int price,
                             Model model) {
+
+        if(departureAirport.equals(arrivalAirport)){
+            model.addAttribute("message", "Departure and destination airports cannot be the same");
+            return "/admin/management";
+        }
         if (verifyDate(departureTime, arrivalTime, model)) return "/admin/management";
         if (totalSeats < 0) {
             model.addAttribute("message", "Total seats must be greater than 0");

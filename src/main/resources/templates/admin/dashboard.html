@@ -14,6 +14,33 @@
   <section class='service'>
     <h3><span th:text="${name}"></span> - Dashboard</h3>
     <div class='row'>
+      <h3>Pending Membership Request</h3>
+      <table>
+        <thead>
+        <tr>
+          <th>Request Id</th>
+          <th>Passenger Id</th>
+          <th>Departure Airport</th>
+          <th>Departure Date</th>
+          <th>Arrival Date</th>
+          <th>Seats Remaining</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="li : ${flights}">
+          <td th:text="${li.get('id')}"></td>
+          <td th:text="${li.get('destinationAirport')}"></td>
+          <td th:text="${li.get('departureAirport')}"></td>
+          <td th:text="${li.get('departureTime')}"></td>
+          <td th:text="${li.get('arrivalTime')}"></td>
+          <td th:text="${li.get('numOfSeats')}"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class='row'>
       <h3>Flights</h3>
       <table>
         <thead>

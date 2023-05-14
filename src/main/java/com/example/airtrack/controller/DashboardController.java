@@ -41,6 +41,9 @@ public class DashboardController {
         sql = "SELECT * FROM revenue";
         rows = jdbcTemplate.queryForList(sql);
         model.addAttribute("revenue", rows);
+        sql = "SELECT * FROM membershipRequest WHERE isApproved = 0";
+        rows = jdbcTemplate.queryForList(sql);
+        model.addAttribute("membershipRequests", rows);
         model.addAttribute("name", user.getUsername());
         return "admin/dashboard";
     }

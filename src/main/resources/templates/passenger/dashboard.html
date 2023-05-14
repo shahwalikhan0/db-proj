@@ -19,7 +19,7 @@
           <h3>Membership</h3>
           <p>If you travel frequently we would highly prefer you to have a membership of our company.</p>
           <p th:if="${isPrimeMember}">You are already a member</p>
-          <a th:if="${!isPrimeMember}" class="button1" onclick="handlePrimeRequest()">Apply</a>
+          <a th:if="${!isPrimeMember}">You are not a member</a>
         </div>
         <div class="col1">
           <h3>Booking</h3>

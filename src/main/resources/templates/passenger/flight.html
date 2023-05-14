@@ -60,7 +60,8 @@
         <div th:if="${li.get('numOfSeats') > 0}">
         <form method="post" action="/passenger/flight/book">
           <input type="hidden" name="id" th:value="${li.get('id')}" />
-          <input type="number" min="1" placeholder="Number of seats" name="seats" style="padding: 5px;" required/>
+          <input type="text" placeholder="Discount Code" name="discount" style="padding: 5px;" required/>
+          <input type="number" min="1" placeholder="Number of seats" name="seats" style="padding: 5px 0;" required/>
           <button type="submit" class="btn btn-success">Book Seat</button>
         </form>
         </div>

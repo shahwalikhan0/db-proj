@@ -2,13 +2,13 @@
   <form class="password-update-form" action="/admin/passenger/grant" method="post">
     <h3>Grant Membership</h3>
     <label class="">Passenger id:</label>
-    <input type="number" name="id" placeholder="Passenger ID" required>
+    <input type="number" min="1" name="id" placeholder="Passenger ID" required>
     <button type="submit" class="btn btn-success">Grant</button>
   </form>
   <form class="password-update-form" action="/admin/passenger/remove" method="post">
     <h3>Delete a User</h3>
     <label class="">Passenger id:</label>
-    <input type="number" name="id" placeholder="Passenger ID" required>
+    <input type="number" min="1" name="id" placeholder="Passenger ID" required>
     <button type="submit" class="btn btn-danger">Remove</button>
   </form>
 </div>

@@ -14,10 +14,10 @@
     <div class="form-box signup">
         <h6 class="errorMessage alert" th:text="${errorMessage}" style="text-align: center; color: red"></h6>
         <h6 class="successMessage alert" th:text="${successMessage}" style="text-align: center; color: green"></h6>
-        <div class="button-box">
-            <h4>Create New Account</h4>
-        </div>
         <form class="input-grp" action="/general/signup" method="post">
+            <div class="button-box">
+                <h4>Create New Account</h4>
+            </div>
             <input type="text" class="input-field" placeholder="Enter username" name="username" required />
             <input type="text" class="input-field" placeholder="Enter your full name" name="fullName" required />
             <input type="text" class="input-field" placeholder="Enter 10 digit account number" name="passportNumber" required />
